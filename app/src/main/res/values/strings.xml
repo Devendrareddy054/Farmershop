@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Farmer shop</string>
-    <string name="select">Select Item</string>
+    <string name="app_name" translatable="false">Farmer shop</string>
 </resources>
