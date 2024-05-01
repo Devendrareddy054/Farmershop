@@ -54,9 +54,9 @@ public class Details extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap<String,Object> m=new HashMap<String,Object>();
-                m.put("Fullname",detailname.getText().toString());
+                m.put("Full name",detailname.getText().toString());
                 m.put("Phone Number",detailnumber.getText().toString());
-                m.put("Address",detailaddress.getText().toString());
+                m.put("Full Address",detailaddress.getText().toString());
 
                 FirebaseDatabase.getInstance().getReference().child("Users").push().setValue(m);
 

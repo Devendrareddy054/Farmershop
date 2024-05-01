@@ -57,7 +57,7 @@ public class DataClass {
         this.key = key;
     }
 
-    public DataClass(){
+    public DataClass(String title, String desc, String imageURL){
 
     }
 }

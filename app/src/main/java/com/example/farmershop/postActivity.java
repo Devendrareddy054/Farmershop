@@ -33,7 +33,7 @@ import java.util.Calendar;
 public class postActivity extends AppCompatActivity {
     ImageView uploadImage;
     Button saveButton;
-    EditText uploadTopic, uploadDesc, uploadLang;
+    EditText uploadTopic, uploadDesc;
     String imageURL;
     Uri uri;
     @Override
@@ -114,16 +114,16 @@ public class postActivity extends AppCompatActivity {
 
         String title = uploadTopic.getText().toString();
         String desc = uploadDesc.getText().toString();
-        String lang = uploadLang.getText().toString();
 
-        DataClass dataClass = new DataClass(title, desc, lang, imageURL);
+        DataClass dataClass;
+        dataClass = new DataClass(title, desc, imageURL);
 
         //We are changing the child from title to currentDate,
         // because we will be updating title as well and it may affect child value.
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
-        FirebaseDatabase.getInstance().getReference("Android Tutorials").child(currentDate)
+        FirebaseDatabase.getInstance().getReference("Users").child(currentDate)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
